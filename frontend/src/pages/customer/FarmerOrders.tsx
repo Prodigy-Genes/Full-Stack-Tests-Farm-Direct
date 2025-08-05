@@ -1,0 +1,1 @@
+export { FarmerOrders as default } from '../PlaceholderPages';

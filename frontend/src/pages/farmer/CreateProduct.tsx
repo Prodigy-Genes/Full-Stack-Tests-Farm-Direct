@@ -1,0 +1,1 @@
+export { CreateProduct as default } from '../PlaceholderPages';

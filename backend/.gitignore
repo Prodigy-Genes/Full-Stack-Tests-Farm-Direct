@@ -1,0 +1,24 @@
+node_modules
+# Keep environment variables out of version control
+.env
+
+/generated/prisma
+
+test-upload.ts
+test-server.ts
+step-by-step-app.ts
+router-test.ts
+fully-simple-app.ts
+debug-app.ts
+app-no-upload.ts
+absolute-minimal.ts
+products-simple.ts
+products-no-upload.ts
+orders-simple.ts
+orders-debug.ts
+auth-simple.ts
+authController-simple.ts
+orderController-simple.ts
+productController-simple.ts
+
+

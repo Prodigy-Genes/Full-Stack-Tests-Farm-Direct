@@ -1,0 +1,429 @@
+/* Login.css - Traditional Farming with Modern Technology Theme */
+
+/* Import Google Fonts for better typography blend */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Login Page Background - Subtle Farm Field Pattern */
+.min-h-screen {
+  background: 
+    linear-gradient(135deg, var(--cream-white) 0%, var(--primary-50) 50%, var(--secondary-50) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="farmRows" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="transparent"/><path d="M0 10 L20 10" stroke="rgba(218,165,32,0.1)" stroke-width="0.5"/><path d="M0 15 L20 15" stroke="rgba(34,139,34,0.08)" stroke-width="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23farmRows)"/></svg>');
+  background-size: cover, 40px 40px;
+  position: relative;
+}
+
+.min-h-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(218, 165, 32, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(34, 139, 34, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Login Container - Modern Card with Traditional Elements */
+.max-w-md {
+  position: relative;
+  z-index: 2;
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
+}
+
+/* Login Card Background */
+.max-w-md .space-y-8 {
+  background: rgba(255, 248, 220, 0.95);
+  -webkit-backdrop-filter: blur();
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(218, 165, 32, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 
+    0 20px 40px rgba(139, 69, 19, 0.1),
+    0 4px 12px rgba(218, 165, 32, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.max-w-md .space-y-8::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--heritage-gradient);
+  border-radius: 16px 16px 0 0;
+}
+
+/* Header Typography - Blend of Traditional and Modern */
+.text-center h2 {
+  font-family: 'Crimson Text', Georgia, serif;
+  color: var(--rich-soil);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  position: relative;
+}
+
+.text-center h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--modern-gradient);
+  border-radius: 1px;
+}
+
+.text-center p {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: var(--earth-brown);
+  font-weight: 400;
+}
+
+/* Brand Logo Styling */
+.flex.justify-center.items-center {
+  position: relative;
+}
+
+.text-2xl.font-bold {
+  font-family: 'Crimson Text', Georgia, serif;
+  background: var(--heritage-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Form Styling */
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Labels - Traditional Serif with Modern Weight */
+label {
+  font-family: 'Crimson Text', Georgia, serif !important;
+  color: var(--rich-soil) !important;
+  font-weight: 600 !important;
+  font-size: 0.925rem !important;
+  letter-spacing: 0.01em;
+}
+
+/* Input Fields - Modern Functionality with Traditional Aesthetics */
+.input-field {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid rgba(218, 165, 32, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 0.925rem;
+  color: var(--rich-soil);
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(139, 69, 19, 0.1);
+  position: relative;
+}
+
+.input-field::placeholder {
+  color: rgba(139, 69, 19, 0.5);
+  font-style: italic;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--harvest-gold);
+  box-shadow: 
+    0 0 0 3px rgba(218, 165, 32, 0.15),
+    inset 0 1px 3px rgba(139, 69, 19, 0.1),
+    0 2px 8px rgba(218, 165, 32, 0.2);
+  background: rgba(255, 255, 255, 1);
+}
+
+.input-field:hover {
+  border-color: rgba(218, 165, 32, 0.5);
+  box-shadow: 
+    inset 0 1px 3px rgba(139, 69, 19, 0.1),
+    0 1px 4px rgba(218, 165, 32, 0.15);
+}
+
+.input-field:disabled {
+  background: rgba(139, 69, 19, 0.05);
+  border-color: rgba(218, 165, 32, 0.2);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Password Field with Modern Tech Elements */
+.relative {
+  position: relative;
+}
+
+.pr-10 {
+  padding-right: 2.5rem;
+}
+
+.absolute.inset-y-0.right-0 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding-right: 0.75rem;
+}
+
+.absolute button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.absolute button:hover {
+  background: rgba(218, 165, 32, 0.1);
+  transform: scale(1.05);
+}
+
+.absolute button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Checkbox Styling - Traditional with Modern Touch */
+input[type="checkbox"] {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(218, 165, 32, 0.5);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--harvest-gold);
+  border-color: var(--forest-green);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+input[type="checkbox"]:hover {
+  border-color: var(--harvest-gold);
+  box-shadow: 0 0 0 2px rgba(218, 165, 32, 0.1);
+}
+
+/* Links - Traditional Color with Modern Hover */
+a {
+  color: var(--forest-green) !important;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--harvest-gold) !important;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--harvest-gold);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Button Styling - Enhanced from Home.css */
+.btn-primary {
+  background: var(--heritage-gradient);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.01em;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 12px rgba(218, 165, 32, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 16px rgba(218, 165, 32, 0.4),
+    0 2px 8px rgba(34, 139, 34, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(218, 165, 32, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 6px rgba(218, 165, 32, 0.2);
+}
+
+.btn-primary:disabled::before {
+  display: none;
+}
+
+/* Loading Spinner */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error Messages - Traditional Warning Style */
+.bg-red-50 {
+  background: rgba(178, 34, 34, 0.05) !important;
+  -webkit-backdrop-filter: blur();
+  backdrop-filter: blur(4px);
+}
+
+.border-red-200 {
+  border-color: rgba(178, 34, 34, 0.3) !important;
+}
+
+.text-red-700 {
+  color: var(--barn-red) !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* Demo Accounts Section - Rustic Info Box */
+.bg-gray-50 {
+  background: rgba(139, 69, 19, 0.05) !important;
+  border: 1px solid rgba(218, 165, 32, 0.2);
+  -webkit-backdrop-filter: blur();
+  backdrop-filter: blur(4px);
+}
+
+.bg-gray-50 p {
+  color: var(--earth-brown) !important;
+  font-family: 'Crimson Text', serif;
+  font-weight: 600 !important;
+}
+
+.text-gray-500 {
+  color: rgba(139, 69, 19, 0.7) !important;
+  font-family: 'Inter', monospace;
+  font-size: 0.8rem !important;
+}
+
+.text-gray-500 strong {
+  color: var(--forest-green) !important;
+  font-weight: 600;
+}
+
+/* Remember Me Section */
+.flex.items-center.justify-between {
+  font-family: 'Inter', sans-serif;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  color: var(--earth-brown);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .max-w-md .space-y-8 {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .text-center h2 {
+    font-size: 2rem;
+  }
+  
+  .input-field {
+    padding: 0.75rem 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .max-w-md .space-y-8 {
+    padding: 1.5rem 1rem;
+  }
+  
+  .text-2xl.font-bold {
+    font-size: 1.5rem;
+  }
+}
+
+/* Focus States for Accessibility */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--harvest-gold);
+  outline-offset: 2px;
+}
+
+/* Smooth Transitions for All Interactive Elements */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Utility Classes */
+.text-primary-600 { color: var(--primary-600) !important; }
+.text-primary-500 { color: var(--forest-green) !important; }

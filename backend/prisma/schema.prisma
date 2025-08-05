@@ -1,0 +1,105 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      UserRole @default(CUSTOMER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Farmer specific fields
+  farmName    String?
+  farmAddress String?
+  phone       String?
+
+  // Relations
+  products Product[]
+  orders   Order[]
+
+  @@map("users")
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  name        String
+  description String
+  price       Float
+  category    Category
+  quantity    Int
+  imageUrl    String?
+  harvestDate DateTime?
+  expiryDate  DateTime?
+  isActive    Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  // Relations
+  farmer   User   @relation(fields: [farmerId], references: [id])
+  farmerId String
+
+  orderItems OrderItem[]
+
+  @@map("products")
+}
+
+model Order {
+  id         String      @id @default(cuid())
+  status     OrderStatus @default(PENDING)
+  totalPrice Float
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  // Relations
+  customer   User   @relation(fields: [customerId], references: [id])
+  customerId String
+
+  orderItems OrderItem[]
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id       String @id @default(cuid())
+  quantity Int
+  price    Float
+
+  // Relations
+  order     Order   @relation(fields: [orderId], references: [id])
+  orderId   String
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+
+  @@map("order_items")
+}
+
+enum UserRole {
+  FARMER
+  CUSTOMER
+}
+
+enum Category {
+  VEGETABLES
+  FRUITS
+  GRAINS
+  DAIRY
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
